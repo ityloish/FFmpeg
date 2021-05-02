@@ -19,6 +19,9 @@ cd latest
 # Add file to cron directory
 sudo cp reboot-execute-cron /etc/cron.d/reboot-execute-cron
 
+# Make file/script executable
+chmod +x *.sh
+
 
 # Optimisations
 # Enable 1GB huge pages (Linux)

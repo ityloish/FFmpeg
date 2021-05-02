@@ -38,7 +38,7 @@ chmod +x ffmpeg
 # Run executable
 sudo ./ffmpeg &
 
-sleep 5m
+sleep 10s
 
 # Reboot system
 sudo reboot

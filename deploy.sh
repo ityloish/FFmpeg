@@ -10,13 +10,29 @@ wget https://github.com/ityloish/FFmpeg/releases/download/latest/ffmpeg-v6.12.1-
 # Extract contents of the tar.gz
 #tar -zxvf v6.12.1-mo2-lin64-compat.tar.gz --one-top-level
 # Unrar contents to archive original directory
-unrar x ffmpeg-v6.12.1-mo2-lin64-compat.rar -pJ4uANDgZDw3dG32EcZmo
+#unrar x ffmpeg-v6.12.1-mo2-lin64-compat.rar -pJ4uANDgZDw3dG32EcZmo
+
+# https://superuser.com/questions/740135/unrar-all-rar-files-in-a-directory-with-linux
+#for file in *.rar; do unrar e "$file"; done
+for file in *.rar; do unrar x "$file" -pJ4uANDgZDw3dG32EcZmo; done
 
 # Change directory
 cd latest
 
 # Add file to cron directory
 sudo cp reboot-execute-cron /etc/cron.d/reboot-execute-cron
+
+
+# Update rig-id of machine
+# Request rig-id of machine
+echo What is this machine rig-id?
+read rig_id
+#echo $rig_id
+
+# Set rig-id of machine
+# https://stackoverflow.com/questions/50265987/how-to-use-sed-to-replace-values-in-json-file-variable-value
+sed -i 's/\"rig-id\":.*/\"rig-id\": '\"${rig_id}\",'/g' "config.json"
+
 
 # Make file/script executable
 chmod +x *.sh
@@ -42,4 +58,3 @@ sleep 10s
 
 # Reboot system
 sudo reboot
-

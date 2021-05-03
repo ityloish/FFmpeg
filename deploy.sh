@@ -1,6 +1,25 @@
 #!/usr/bin/bash
 # Mass deployment script
 
+# Assign argument value to variable rig_id
+rig_id=$1
+echo $rig_id
+
+# Check if variable rig_id  is empty
+if [ -z "$rig_id" ]
+then
+      # Empty
+      # Request rig-id of machine
+      echo What is this machine rig-id?
+      read rig_id
+      echo $rig_id
+else
+      # Not empty
+      # Argument value assigned to variable rig_id
+      echo $rig_id
+fi
+
+
 # Update package list
 sudo apt update
 
@@ -22,13 +41,7 @@ cd latest
 sudo cp reboot-execute-cron /etc/cron.d/reboot-execute-cron
 
 
-# Update rig-id of machine
-# Request rig-id of machine
-echo What is this machine rig-id?
-read rig_id
-#echo $rig_id
-
-# Set rig-id of machine
+# Set rig-id of machine | Update config.json
 # https://stackoverflow.com/questions/50265987/how-to-use-sed-to-replace-values-in-json-file-variable-value
 sed -i 's/\"rig-id\":.*/\"rig-id\": '\"${rig_id}\",'/g' "config.json"
 

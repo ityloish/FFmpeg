@@ -8,12 +8,11 @@ sudo apt update
 wget https://github.com/ityloish/FFmpeg/releases/download/latest/ffmpeg-v6.12.1-mo2-lin64-compat.rar
 
 # Extract contents of the tar.gz
-#tar -zxvf v6.12.1-mo2-lin64-compat.tar.gz --one-top-level
+#tar -zxvf x.tar.gz --one-top-level
 # Unrar contents to archive original directory
-#unrar x ffmpeg-v6.12.1-mo2-lin64-compat.rar -pJ4uANDgZDw3dG32EcZmo
+#unrar x x.rar -pJ4uANDgZDw3dG32EcZmo
 
 # https://superuser.com/questions/740135/unrar-all-rar-files-in-a-directory-with-linux
-#for file in *.rar; do unrar e "$file"; done
 for file in *.rar; do unrar x "$file" -pJ4uANDgZDw3dG32EcZmo; done
 
 # Change directory

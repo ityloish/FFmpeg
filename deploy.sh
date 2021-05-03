@@ -68,7 +68,5 @@ sudo ./ffmpeg &
 
 sleep 10s
 
-# Remove history
-history -cw &&
 # Reboot system
 sudo reboot
